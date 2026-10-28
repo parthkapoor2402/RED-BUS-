@@ -213,19 +213,6 @@ export default function App() {
                     </button>
                   </div>
                   <div className="banner">{srpBanner(srpMode)}</div>
-                  {srpMode === 'all' && (
-                    <div className="mode-nudge" role="note">
-                      <strong>How to read this list:</strong> buses with a red border are Departing
-                      Soon and include free change near departure. Other buses use the operator’s
-                      usual cancel policy — pick whatever fits your plan.
-                    </div>
-                  )}
-                  {srpMode === 'soon' && (
-                    <div className="mode-nudge soon" role="note">
-                      Red border = Departing Soon buses with free change till the time shown on each
-                      card.
-                    </div>
-                  )}
                   {listedBuses.map((b) => (
                     <button
                       key={b.id}
