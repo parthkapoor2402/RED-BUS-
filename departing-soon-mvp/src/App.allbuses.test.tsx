@@ -14,8 +14,11 @@ describe('All buses mode', () => {
     await user.click(screen.getByRole('tab', { name: /all buses/i }))
     expect(screen.getByText(/orange travels/i)).toBeInTheDocument()
     expect(screen.getAllByText(/standard cancel/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/later buses use standard cancel/i)).toBeInTheDocument()
+    expect(screen.getByText(/how to read this list/i)).toBeInTheDocument()
+    expect(screen.queryByText(/stay on departing soon/i)).not.toBeInTheDocument()
     expect(screen.getByText(/departs 21:00/i)).toBeInTheDocument()
+    expect(document.querySelectorAll('.card.ds').length).toBeGreaterThan(0)
+    expect(document.querySelectorAll('.card.regular').length).toBeGreaterThan(0)
   })
 
   it('returns to Departing Soon board on tab click', async () => {

@@ -47,8 +47,10 @@ describe('Phase 2 · All buses contrast', () => {
     }
   })
 
-  it('banners differ by mode', () => {
+  it('banners differ by mode without pressuring the user', () => {
     expect(srpBanner('soon')).toMatch(/next 4 hours/i)
     expect(srpBanner('all')).toMatch(/today/i)
+    expect(srpBanner('all')).not.toMatch(/lack free change/i)
   })
 })
+

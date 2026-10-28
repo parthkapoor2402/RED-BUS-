@@ -149,7 +149,7 @@ export function srpBanner(mode: 'soon' | 'all'): string {
   if (mode === 'soon') {
     return `${DEPARTING_SOON_BUSES.length} buses in next 4 hours · from ₹180`
   }
-  return `${ALL_BUSES.length} buses today · from ₹180 · later trips lack free change`
+  return `${ALL_BUSES.length} buses today · from ₹180`
 }
 
 export { fareDelta, freeChangeUntil }

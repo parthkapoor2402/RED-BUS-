@@ -282,14 +282,19 @@ button.chip {
 }
 .banner { font-size: 12.5px; font-weight: 500; color: #444; margin-bottom: 10px; }
 .mode-nudge {
-  background: #fff8e1;
-  border: 1px solid #ffe082;
-  color: #6d4c00;
+  background: #f4f7fb;
+  border: 1px solid #d7e2ef;
+  color: #334155;
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.45;
   padding: 10px 12px;
   border-radius: 8px;
   margin-bottom: 10px;
+}
+.mode-nudge.soon {
+  background: #fff5f5;
+  border-color: #f5c2c5;
+  color: #5c2b2e;
 }
 .tag.muted {
   background: #f5f5f5;
@@ -297,7 +302,7 @@ button.chip {
 }
 
 .card {
-  border: 1px solid #eee;
+  border: 1.5px solid #e5e5e5;
   border-radius: 10px;
   padding: 12px;
   margin-bottom: 10px;
@@ -307,10 +312,39 @@ button.chip {
   font: inherit;
   color: inherit;
 }
+.card.ds {
+  border: 2px solid var(--rb);
+  box-shadow: 0 0 0 1px rgba(216, 78, 85, 0.08);
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #fff5f5, #fff) border-box;
+}
+.card.ds::before {
+  content: "Departing Soon";
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rb);
+  background: #fff0f1;
+  border: 1px solid #f0b8bb;
+  border-radius: 4px;
+  padding: 3px 7px;
+  margin-bottom: 8px;
+}
+.card.regular {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 4px; /* squarer grid feel vs DS rounded red */
+}
 .card.tap { cursor: pointer; transition: border-color 120ms ease, box-shadow 120ms ease; }
-.card.tap:hover {
-  border-color: #f0b8bb;
-  box-shadow: 0 4px 14px rgba(216,78,85,0.12);
+.card.tap.ds:hover {
+  border-color: #c62828;
+  box-shadow: 0 4px 14px rgba(216,78,85,0.18);
+}
+.card.tap.regular:hover {
+  border-color: #bbb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .times {
   display: grid;
